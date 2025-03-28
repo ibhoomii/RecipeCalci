@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurement Conversion</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #85d8ce, #93b4d3);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #444;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input, select {
+            background: #f2f2f2;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            background: #e6e6e6;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Measurement Conversion</h1>
+    <div class="container">
+        <label for="ingredient">Ingredient:</label>
+        <input type="text" id="ingredient" placeholder="e.g., sugar">
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <label for="unit">Select Unit:</label>
+        <select id="unit">
+            <option value="cup">Cup</option>
+            <option value="tablespoon">Tablespoon</option>
+            <option value="teaspoon">Teaspoon</option>
+        </select>
+
+        <button onclick="convertMeasurement()">Convert</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const densities = {
+            "sugar": { "cup": 200, "tablespoon": 12.5, "teaspoon": 4.2 },
+            "flour": { "cup": 120, "tablespoon": 7.5, "teaspoon": 2.5 },
+            "butter": { "cup": 227, "tablespoon": 14.2, "teaspoon": 4.7 }
+        };
+
+        function convertMeasurement() {
+            let ingredient = document.getElementById("ingredient").value.toLowerCase();
+            let amount = parseFloat(document.getElementById("amount").value);
+            let unit = document.getElementById("unit").value;
+            let resultDiv = document.getElementById("result");
+
+            if (isNaN(amount) || amount <= 0) {
+                resultDiv.innerHTML = "❌ Please enter a valid amount.";
+                return;
+            }
+
+            if (densities[ingredient] && densities[ingredient][unit]) {
+                let grams = amount * densities[ingredient][unit];
+                resultDiv.innerHTML = `✅ ${amount} ${unit}(s) of ${ingredient} is approximately <strong>${grams.toFixed(2)} grams.</strong>`;
+            } else {
+                resultDiv.innerHTML = "⚠️ Ingredient not found in the database.";
+            }
+        }
+    </script>
+
+</body>
+</html>

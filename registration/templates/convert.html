@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Recipe Measurement Converter</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Increased spacing */
+        }
+        .tab-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 280px; /* Increased width */
+            text-align: center;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .tab-btn img {
+            width: 280px; /* Wider images */
+            height: 280px; /* Taller images */
+        }
+        .tab-btn span {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert Measurements with Accuracy</h1>
+
+    <!-- Navigation Buttons -->
+    <div class="tabs">
+        <a href="{% url 'conversions' %}" class="tab-btn">
+            <img src="{% static 'img/measurement.jpg' %}" alt="Measurement Conversions">
+            <span>Measurement Conversions</span>
+        </button>
+        <a href="{% url 'ingresub' %}" class="tab-btn">
+            <img src="{% static 'img/substitutions.jpg' %}" alt="Ingredient Substitutions">
+            <span>Ingredient Substitution</span>
+        </a>
+        <button>
+        <a href="{% url 'portscaling' %}" class="tab-btn">
+            <img src="{% static 'img/scaling.jpg' %}" alt="Portion Scaling">
+            <span>Portion Scaling</span>
+        </a>
+    </button>
+    </div>
+
+</body>
+</html>

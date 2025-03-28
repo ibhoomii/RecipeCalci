@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portion Scaling</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #444;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input {
+            background: #f2f2f2;
+            outline: none;
+        }
+
+        input:focus {
+            background: #e6e6e6;
+        }
+
+        button {
+            background-color: #ff5722;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #d84315;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ingredient-list {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .ingredient-list p {
+            font-size: 16px;
+            padding: 5px;
+            background: #ffe0b2;
+            border-radius: 6px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Portion Scaling</h1>
+    <div class="container">
+        <label for="servings">Original Servings:</label>
+        <input type="number" id="servings" placeholder="Enter number of servings" min="1">
+
+        <label for="ingredient">Ingredient Name:</label>
+        <input type="text" id="ingredient" placeholder="e.g., Flour">
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" placeholder="Enter quantity (grams, cups, etc.)" min="0.1">
+
+        <button onclick="addIngredient()">Add Ingredient</button>
+
+        <div class="ingredient-list" id="ingredient-list"></div>
+
+        <label for="newServings">New Servings:</label>
+        <input type="number" id="newServings" placeholder="Enter new number of servings" min="1">
+
+        <button onclick="scalePortions()">Scale Ingredients</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let ingredients = [];
+
+        function addIngredient() {
+            let ingredientName = document.getElementById("ingredient").value.trim();
+            let quantity = parseFloat(document.getElementById("quantity").value);
+            let servings = parseInt(document.getElementById("servings").value);
+
+            if (!ingredientName || isNaN(quantity) || quantity <= 0 || isNaN(servings) || servings <= 0) {
+                alert("❌ Please enter valid ingredient details.");
+                return;
+            }
+
+            ingredients.push({ name: ingredientName, quantity: quantity, servings: servings });
+
+            document.getElementById("ingredient-list").innerHTML += `<p>✅ ${ingredientName}: ${quantity} (for ${servings} servings)</p>`;
+
+            // Clear input fields
+            document.getElementById("ingredient").value = "";
+            document.getElementById("quantity").value = "";
+        }
+
+        function scalePortions() {
+            let newServings = parseInt(document.getElementById("newServings").value);
+            let resultDiv = document.getElementById("result");
+
+            if (isNaN(newServings) || newServings <= 0) {
+                resultDiv.innerHTML = "❌ Please enter a valid number of new servings.";
+                return;
+            }
+
+            if (ingredients.length === 0) {
+                resultDiv.innerHTML = "⚠️ No ingredients have been added.";
+                return;
+            }
+
+            let scaledIngredients = ingredients.map(ingredient => {
+                let scaledQuantity = (ingredient.quantity / ingredient.servings) * newServings;
+                return `🔹 ${ingredient.name}: <strong>${scaledQuantity.toFixed(2)}</strong>`;
+            });
+
+            resultDiv.innerHTML = `<h3>Scaled Ingredients for ${newServings} servings:</h3>` + scaledIngredients.join("<br>");
+        }
+    </script>
+
+</body>
+</html>

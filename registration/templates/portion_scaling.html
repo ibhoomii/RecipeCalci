@@ -1,0 +1,7 @@
+<h2>Portion Scaling</h2>
+<form action="{% url 'portion_scaling' %}" method="get">
+    <input type="number" name="original_servings" placeholder="Original Servings" required>
+    <input type="number" name="new_servings" placeholder="New Servings" required>
+    <input type="number" name="ingredient_quantity" placeholder="Ingredient Quantity" required>
+    <button type="submit">Scale</button>
+</form>

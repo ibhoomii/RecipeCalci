@@ -1,0 +1,119 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #dbeafe, #bae6fd);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    background: #ff7043;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffccbc;
+}
+
+/* Header */
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.btn {
+    background: #ff7043;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #f4511e;
+}
+
+/* Quick Convert Section */
+.quick-convert {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Recipe Cards */
+.recipe-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.recipe-card {
+    background: white;
+    padding: 15px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Footer */
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

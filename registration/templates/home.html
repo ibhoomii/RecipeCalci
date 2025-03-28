@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeCalc</title>
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">RecipeCalc</div>
+        <div class="nav-links">
+            <a href="{% url 'convert' %}">Convert</a>
+            <a href="{% url 'recipes' %}">Recipes</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Accurate Measurements for Perfect Recipes!</h1>
+        <p>Convert your ingredients with precision and make cooking effortless.</p>
+
+        <!-- Fun Fact Section -->
+        <div class="fun-fact">
+            <h3>Did You Know?</h3>
+            <p id="funFact">Loading fun fact...</p>
+        </div>
+    </header>
+
+    <!-- Quick Convert Section -->
+    <section class="quick-convert">
+        <h2>Quick Convert</h2>
+        <div class="input-group">
+            <input type="text" id="ingredient" placeholder="Enter ingredient (e.g. Flour)">
+            <input type="text" id="amount" placeholder="Amount">
+            <button onclick="convertMeasurement()">Convert</button>
+        </div>
+        <p><strong>Result:</strong> <span id="result">--</span></p>
+    </section>
+
+    <!-- Featured Recipes -->
+    <section class="recipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-container">
+            <div class="recipe-card">
+                <a href="{% url 'spaghetti_bolognese' %}">
+                    <img src="{% static 'img/recipe2.jpg' %}" alt="Spaghetti Bolognese">
+                    <h3>Spaghetti Bolognese</h3>
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="{% url 'chicken_biryani' %}">
+                    <img src="{% static 'img/recipe3.jpg' %}" alt="Chicken Biryani">
+                    <h3>Chicken Biryani</h3>
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="{% url 'paneer_makhni' %}">
+                    <img src="{% static 'img/recipe4.jpg' %}" alt="Paneer Makhni">
+                    <h3>Paneer Makhni</h3>
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="{% url 'kheer' %}">
+                    <img src="{% static 'img/recipe5.jpg' %}" alt="Kheer">
+                    <h3>Kheer</h3>
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="{% url 'chocolate_cake' %}">
+                    <img src="{% static 'img/recipe1.jpg' %}" alt="Chocolate Cake">
+                    <h3>Chocolate Cake</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2025 BITEBYTES | Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </footer>
+
+    <!-- JavaScript for Fun Facts -->
+    <script>
+        const funFacts = [
+            "Honey never spoils! Archaeologists found 3000-year-old honey that was still good.",
+            "Adding a pinch of salt to your coffee can reduce bitterness and enhance the flavor.",
+            "You can keep avocados fresh longer by storing them with onions!",
+            "The red juice in raw meat isn't blood—it's a protein called myoglobin.",
+            "Carrots were originally purple, not orange!",
+            "Chocolate was once used as currency in ancient civilizations.",
+            "Pineapples take about 2 years to grow before they are ready to eat!"
+        ];
+
+        function displayFunFact() {
+            const randomIndex = Math.floor(Math.random() * funFacts.length);
+            document.getElementById("funFact").innerText = funFacts[randomIndex];
+        }
+
+        // Load a random fun fact when the page loads
+        window.onload = displayFunFact;
+    </script>
+
+    <!-- Link to JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
