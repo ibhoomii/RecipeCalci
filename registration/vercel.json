@@ -1,16 +1,20 @@
-{
+  {
     "version": 2,
     "builds": [
       {
         "src": "manage.py",
-        "use": "vercel-python"
+        "use": "python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "manage.py"
+        "dest": "registration/wsgi.py"
       }
-    ]
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "registration.settings"
+    }
   }
+  
   
