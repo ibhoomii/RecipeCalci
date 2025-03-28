@@ -6,6 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chocolate Cake</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #f8bbd0, #880e4f);
+            color: #4a148c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .recipe-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #6a1b9a;
+            font-size: 28px;
+        }
+
+        h2 {
+            color: #880e4f;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f3e5f5;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        p {
+            text-align: left;
+            line-height: 1.6;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="recipe-container">
@@ -24,6 +82,28 @@
             <li>1/2 tsp Baking Soda</li>
             <li>Pinch of Salt</li>
         </ul>
+        <h2>Instructions</h2>
+        <p><strong>Step 1: Prepare the Cake Batter</strong><br>
+            Preheat oven to 175°C (350°F). Grease a cake pan and line it with parchment paper.<br>
+            In a large bowl, whisk together flour, sugar, cocoa powder, baking soda, baking powder, and salt.<br>
+            Add eggs, oil, milk, and vanilla extract. Mix well.<br>
+            Stir in hot water or coffee and mix until smooth.
+        </p>
+        <p><strong>Step 2: Bake the Cake</strong><br>
+            Pour the batter into the prepared cake pan.<br>
+            Bake for 30-35 minutes or until a toothpick inserted in the center comes out clean.<br>
+            Let the cake cool completely before frosting.
+        </p>
+        <p><strong>Step 3: Make the Frosting</strong><br>
+            Beat the butter until creamy.<br>
+            Add powdered sugar, cocoa powder, and vanilla extract. Mix well.<br>
+            Slowly add milk and continue beating until smooth and fluffy.
+        </p>
+        <p><strong>Step 4: Assemble & Decorate</strong><br>
+            Spread the frosting evenly over the cooled cake.<br>
+            Add chocolate shavings, sprinkles, or nuts for decoration (optional).<br>
+            Enjoy! 🍰✨
+        </p>
     </div>
 </body>
 </html>

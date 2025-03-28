@@ -5,12 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paneer Makhni</title>
-    <img src="{% static 'img/recipe4.jpg' %}" alt="Paneer Makhni">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #ffccbc, #d84315); /* Light to Deep Orange Gradient */
+            color: #4e342e; /* Dark Brown */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .recipe-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #bf360c;
+            font-size: 28px;
+        }
+
+        h2 {
+            color: #d84315;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #ffe0b2;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        p {
+            text-align: left;
+            line-height: 1.6;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="recipe-container">
         <h1>Paneer Makhni</h1>
-        <img src="paneer_makhni.jpg" alt="Paneer Makhni">
+        <img src="{% static 'img/recipe4.jpg' %}" alt="Paneer Makhni">
         <h2>Ingredients</h2>
         <ul>
             <li>250g Paneer (cubed)</li>
@@ -23,6 +81,27 @@
             <li>1 tbsp Butter</li>
             <li>Salt to taste</li>
         </ul>
+        <h2>Instructions</h2>
+        <p>
+            <strong>Step 1: Cook the Paneer</strong><br>
+            Heat 1 tbsp butter in a pan.<br>
+            Lightly sauté the paneer cubes for 1-2 minutes until golden.<br>
+            Remove and set aside.
+        </p>
+        <p>
+            <strong>Step 2: Prepare the Makhni Sauce</strong><br>
+            Heat butter & oil in a pan. Add cumin seeds, garlic, and ginger. Sauté until fragrant.<br>
+            Add tomato puree, turmeric, red chili powder, coriander powder, and salt. Cook until the oil separates.<br>
+            Pour in ½ cup water and let it simmer for 5 minutes.<br>
+            Stir in fresh cream, sugar, and kasuri methi. Mix well.
+        </p>
+        <p>
+            <strong>Step 3: Combine & Serve</strong><br>
+            Add sautéed paneer to the sauce and mix gently.<br>
+            Simmer for 2-3 minutes on low heat.<br>
+            Garnish with fresh coriander and a drizzle of cream.
+        </p>
+        <p><strong>Enjoy with:</strong> 🥖 Naan | 🍚 Jeera Rice | 🥗 Salad</p>
     </div>
 </body>
 </html>

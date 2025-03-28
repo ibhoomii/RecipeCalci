@@ -9,34 +9,40 @@
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #ff6b6b;
-            font-size: 2.5em;
-        }
-        p {
-            font-size: 1.2em;
-            color: #333;
-            line-height: 1.6;
-        }
+   <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("{% static 'img/foodbg.jpg' %}") no-repeat center center/cover;
+        
+        text-align: center;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background: rgba(217, 93, 57, 0.9); /* Warm Reddish Orange with transparency */
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+    h1 {
+        color: #E8D8C4; /* Light Cream */
+        font-size: 2.5em;
+    }
+    p {
+        font-size: 1.2em;
+        color: white;
+        line-height: 1.6;
+    }
+    .team-section {
+        margin-top: 20px;
+    }
+
         .team-section {
             margin-top: 20px;
         }
@@ -44,9 +50,10 @@
             display: inline-block;
             margin: 15px;
             padding: 15px;
-            background: #fff;
+            background: #407076; /* Teal */
             border-radius: 8px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            color: white;
         }
         .team-member img {
             width: 80px;
@@ -57,11 +64,41 @@
         .team-member h3 {
             margin: 10px 0 5px;
             font-size: 1.2em;
-            color: #ff6b6b;
+            color: #E8D8C4; /* Light Cream */
         }
         .team-member p {
             font-size: 0.9em;
-            color: #666;
+            color: #F0E5D8;
+        }
+        nav {
+            background: #407076; /* Teal */
+            padding: 15px;
+        }
+        .logo {
+            font-size: 1.5em;
+            color: #E8D8C4; /* Light Cream */
+            font-weight: bold;
+        }
+ .nav-links a {
+            margin: 0 15px;
+            color: #FAE5D3; /* Soft Peach */
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        .nav-links a:hover {
+            color: #E8D8C4; /* Light Cream */
+        }
+        .footer {
+            background: #407076; /* Teal */
+            color: white;
+            padding: 10px;
+            margin-top: 280px;
+            flex: 1;
+
+        }
+        .footer a {
+            color: #E8D8C4; /* Light Cream */
+            text-decoration: none;
         }
     </style>
 </head>

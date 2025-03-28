@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +11,62 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: url('{% static "img/homebg.jpg" %}') no-repeat center center/cover;
+            color: #4a2c2a;
+        }
+        nav {
+            background-color: #ff6b81;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .logo {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: #fff;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .hero {
+            background: rgba(255, 165, 180, 0.9);
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .fun-fact {
+            background: rgba(255, 105, 97, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .quick-convert button {
+            background: #ff3f34;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .recipes h2 {
+            color: #ff512f;
+        }
+        .recipe-card h3 {
+            color: #ff3f34;
+        }
+        .footer {
+            background:#e68d08e6;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <script src="{% static 'js/script.js' %}"></script>
@@ -31,8 +86,6 @@
     <header class="hero">
         <h1>Accurate Measurements for Perfect Recipes!</h1>
         <p>Convert your ingredients with precision and make cooking effortless.</p>
-
-        <!-- Fun Fact Section -->
         <div class="fun-fact">
             <h3>Did You Know?</h3>
             <p id="funFact">Loading fun fact...</p>
@@ -44,7 +97,7 @@
         <h2>Quick Convert</h2>
         <div class="input-group">
             <input type="text" id="ingredient" placeholder="Enter ingredient (e.g. Flour)">
-            <input type="text" id="amount" placeholder="Amount(in cups)">
+            <input type="text" id="amount" placeholder="Amount (in cups)">
             <button onclick="convertMeasurement()">Convert</button>
         </div>
         <p><strong>Result:</strong> <span id="result">--</span></p>
@@ -94,26 +147,34 @@
 
     <!-- JavaScript for Fun Facts -->
     <script>
-        const funFacts = [
-            "Honey never spoils! Archaeologists found 3000-year-old honey that was still good.",
-            "Adding a pinch of salt to your coffee can reduce bitterness and enhance the flavor.",
-            "You can keep avocados fresh longer by storing them with onions!",
-            "The red juice in raw meat isn't blood—it's a protein called myoglobin.",
-            "Carrots were originally purple, not orange!",
-            "Chocolate was once used as currency in ancient civilizations.",
-            "Pineapples take about 2 years to grow before they are ready to eat!"
-        ];
+const funFacts = [
+    "Honey never spoils! Archaeologists found 3000-year-old honey that was still good.",
+    "Adding a pinch of salt to your coffee can reduce bitterness and enhance the flavor.",
+    "You can keep avocados fresh longer by storing them with onions!",
+    "The red juice in raw meat isn't blood—it's a protein called myoglobin.",
+    "Carrots were originally purple, not orange!",
+    "Chocolate was once used as currency in ancient civilizations.",
+    "Pineapples take about 2 years to grow before they are ready to eat!",
+    "Tomatoes were once thought to be poisonous in Europe.",
+    "Bananas are berries, but strawberries are not!",
+    "Apples float in water because they are 25% air.",
+    "Peanut butter can be turned into diamonds under high pressure.",
+    "Watermelon is 92% water, making it a great hydrating snack.",
+    "Cucumbers are technically fruits, not vegetables!",
+    "Eggshells are covered in tiny pores that allow air and moisture to pass through.",
+    "Cheese is the most stolen food in the world!",
+    "Vanilla flavoring comes from orchids.",
+    "The fear of cooking is called Mageirocophobia.",
+    "A single spaghetti noodle is called a 'spaghetto'.",
+    "Popcorn was first domesticated over 5,000 years ago in Mexico."
+];
+
 
         function displayFunFact() {
             const randomIndex = Math.floor(Math.random() * funFacts.length);
             document.getElementById("funFact").innerText = funFacts[randomIndex];
         }
-
-        // Load a random fun fact when the page loads
         window.onload = displayFunFact;
     </script>
-
-    <!-- Link to JavaScript -->
-    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

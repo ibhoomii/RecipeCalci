@@ -6,6 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spaghetti Bolognese</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #bbdefb, #1565c0); /* Light to Dark Blue Gradient */
+            color: #1a237e; /* Dark blue */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .recipe-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0d47a1;
+            font-size: 28px;
+        }
+
+        h2 {
+            color: #1565c0;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        p {
+            text-align: left;
+            line-height: 1.6;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="recipe-container">
@@ -23,6 +81,29 @@
             <li>1/2 tsp Black Pepper</li>
             <li>Fresh Basil for garnish</li>
         </ul>
+        <h2>Instructions</h2>
+        <p>
+            <strong>Cook the Spaghetti:</strong><br>
+            Boil water in a large pot, add a pinch of salt, and cook the spaghetti according to the package instructions.<br>
+            Drain and set aside.
+        </p>
+        <p>
+            <strong>Prepare the Sauce:</strong><br>
+            Heat olive oil in a pan over medium heat.<br>
+            Add garlic and onion, sauté until soft.<br>
+            Add ground beef (if using) and cook until browned.
+        </p>
+        <p>
+            <strong>Add Tomatoes & Seasonings:</strong><br>
+            Pour in the crushed tomatoes.<br>
+            Season with salt, black pepper, oregano, and chili flakes.<br>
+            Let it simmer for 10–15 minutes, stirring occasionally.
+        </p>
+        <p>
+            <strong>Combine & Serve:</strong><br>
+            Add the cooked spaghetti to the sauce and mix well.<br>
+            Sprinkle Parmesan cheese and fresh basil on top.
+        </p>
     </div>
 </body>
 </html>

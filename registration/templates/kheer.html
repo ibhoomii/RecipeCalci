@@ -6,6 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kheer</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #fce4ec, #880e4f); /* Light to Dark Pink Gradient */
+            color: #4a148c; /* Deep Purple */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .recipe-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #6a1b9a;
+            font-size: 28px;
+        }
+
+        h2 {
+            color: #880e4f;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f8bbd0;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        p {
+            text-align: left;
+            line-height: 1.6;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="recipe-container">
@@ -21,6 +79,28 @@
             <li>1 tbsp Raisins</li>
             <li>Saffron Strands (optional)</li>
         </ul>
+        <h2>Instructions</h2>
+        <p>
+            <strong>Step 1: Cook the Rice</strong><br>
+            In a heavy-bottomed pan, bring milk to a boil on medium heat.<br>
+            Add soaked & drained rice and cook on low heat, stirring occasionally.<br>
+            Let it simmer for 25-30 minutes until the rice is soft and the milk thickens.
+        </p>
+        <p>
+            <strong>Step 2: Add Sweetness & Flavor</strong><br>
+            Add sugar, crushed cardamoms, and saffron strands. Mix well.<br>
+            Stir in chopped nuts and raisins. Let it simmer for another 5 minutes.
+        </p>
+        <p>
+            <strong>Step 3: Final Touch</strong><br>
+            Turn off the heat and add rose water for extra aroma.<br>
+            Garnish with pistachios & more saffron.
+        </p>
+        <h2>Serving Suggestions</h2>
+        <p>
+            Serve warm or chilled, depending on your preference.<br>
+            Enjoy with a sprinkle of nuts on top! 😋
+        </p>
     </div>
 </body>
 </html>
