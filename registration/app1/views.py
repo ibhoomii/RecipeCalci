@@ -94,15 +94,6 @@ def LogoutPage(request):
     logout(request)
     return redirect('login')
 
-def recipes_page(request):
-    return render(request, 'recipes.html')
-
-def generate_recipe(request):
-    return render(request, 'generate_recipe.html')  # Create this file later
-
-def search_recipe(request):
-    return render(request, 'search_recipe.html')
-
 def convert(request):
     return render(request, 'convert.html')
 
@@ -118,22 +109,15 @@ CONVERSION_RATES = {
     ("grams", "ounces"): 1/28.35,
 }
 
-SUBSTITUTIONS = {
-    "eggs": ["mashed banana", "applesauce", "yogurt"],
-    "milk": ["almond milk", "soy milk", "coconut milk"],
-    "butter": ["margarine", "olive oil", "avocado"],
-    "sugar": ["honey", "maple syrup", "stevia"],
-    "flour": ["almond flour", "coconut flour", "oat flour"],
-    "baking powder": ["baking soda + vinegar", "yeast"],
-    "salt": ["lemon juice", "soy sauce (for savory)"]
-}
-
 def ingresub(request):
+    return render(request, 'ingresub.html')
+
+'''def ingresub(request):
     suggestions = None
     if request.method == "POST":
         ingredient = request.POST.get("ingredient", "").lower()
         suggestions = SUBSTITUTIONS.get(ingredient, ["No alternative found"])
 
-    return render(request, "ingresub.html", {"suggestions": suggestions})
+    return render(request, "ingresub.html", {"suggestions": suggestions})'''
 def conversions(request):
      return render(request, 'conversions.html')

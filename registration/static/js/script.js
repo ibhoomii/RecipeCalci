@@ -11,28 +11,6 @@ function showTab(tabId) {
     document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add("active");
 }
 
-// Function to convert measurement values
-function convertMeasurement() {
-    let inputValue = parseFloat(document.getElementById("inputValue").value);
-    let fromUnit = document.getElementById("fromUnit").value;
-    let toUnit = document.getElementById("toUnit").value;
-    let resultText = document.getElementById("result");
-
-    let conversionRates = {
-        grams: { ounces: 0.0353, pounds: 0.0022, cups: 0.0042 },
-        ounces: { grams: 28.35, pounds: 0.0625, cups: 0.125 },
-        pounds: { grams: 453.6, ounces: 16, cups: 2 },
-        cups: { grams: 240, ounces: 8, pounds: 0.5 }
-    };
-
-    if (fromUnit === toUnit) {
-        resultText.innerText = `Result: ${inputValue} ${toUnit}`;
-    } else {
-        let convertedValue = inputValue * (conversionRates[fromUnit][toUnit] || 1);
-        resultText.innerText = `Result: ${convertedValue.toFixed(2)} ${toUnit}`;
-    }
-}
-
 // Function to scale recipes
 function scaleRecipe() {
     let scaleFactor = parseFloat(document.getElementById("scaleFactor").value);
@@ -44,6 +22,7 @@ function scaleRecipe() {
         resultText.innerText = "Enter a valid scale factor!";
     }
 }
+
 document.addEventListener("DOMContentLoaded", function () {
     function convertMeasurement() {
         let ingredient = document.getElementById("ingredient").value.trim().toLowerCase();
@@ -55,12 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Example ingredient densities (grams per cup)
+        // Updated ingredient densities (grams per cup)
         let densities = {
-            "flour": 120, // 1 cup = 120g
-            "sugar": 200, // 1 cup = 200g
-            "butter": 227, // 1 cup = 227g
-            "milk": 240 // 1 cup = 240g
+            "flour": 120,       // 1 cup = 120g
+            "sugar": 200,       // 1 cup = 200g
+            "butter": 227,      // 1 cup = 227g
+            "milk": 240,        // 1 cup = 240g
+            "honey": 340,       // 1 cup = 340g
+            "oil": 218,         // 1 cup = 218g
+            "rice": 195,        // 1 cup = 195g
+            "oats": 90,         // 1 cup = 90g
+            "cocoa powder": 125,// 1 cup = 125g
+            "cheese": 113,      // 1 cup shredded = 113g
+            "yogurt": 245,      // 1 cup = 245g
+            "cornstarch": 128,  // 1 cup = 128g
+            "peanut butter": 258,// 1 cup = 258g
+            "salt": 288,        // 1 cup = 288g
+            "baking powder": 192// 1 cup = 192g
         };
 
         if (ingredient in densities) {

@@ -21,7 +21,6 @@
         <div class="logo">RecipeCalc</div>
         <div class="nav-links">
             <a href="{% url 'convert' %}">Convert</a>
-            <a href="{% url 'recipes' %}">Recipes</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
@@ -45,7 +44,7 @@
         <h2>Quick Convert</h2>
         <div class="input-group">
             <input type="text" id="ingredient" placeholder="Enter ingredient (e.g. Flour)">
-            <input type="text" id="amount" placeholder="Amount">
+            <input type="text" id="amount" placeholder="Amount(in cups)">
             <button onclick="convertMeasurement()">Convert</button>
         </div>
         <p><strong>Result:</strong> <span id="result">--</span></p>
@@ -90,7 +89,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        © 2025 BITEBYTES | Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a>
+        © 2025 TripleThreat | Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a>
     </footer>
 
     <!-- JavaScript for Fun Facts -->
