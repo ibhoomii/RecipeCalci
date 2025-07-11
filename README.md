@@ -1,4 +1,4 @@
-🍽️ AI Recipe Generator & Ingredient Converter
+🍽️ RecipeCalc
 An intelligent recipe web application built using the Django framework. This platform helps users generate personalized recipes, convert ingredient measurements (e.g., cups to grams), and find smart ingredient alternatives using AI.
 
 📌 Features
